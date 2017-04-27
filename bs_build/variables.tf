@@ -2,7 +2,7 @@ variable "region" {
   default = "us-east-1"
 }
 variable "vpc_id" {
-  default = "vpc-c8a4b3ae"
+  default = "vpc-a3123fc5"
 }
 variable "vpc_cidr" {
   default = "10.220.16.0/22"
@@ -15,10 +15,10 @@ variable "availability_zones" {
   default = ["us-east-1c", "us-east-1d"]
 }
 variable "private_subnet_id" {
-  default = "subnet-87fb20cf"
+  default = "subnet-4e444015"
 }
 variable "centos_base_ami" {
-  default = "ami-d17520c6"
+  default = "ami-47096750"
 }
 variable "project_tag" {
   default = "IaaS-Pilot"

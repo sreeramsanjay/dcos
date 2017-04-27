@@ -1,0 +1,37 @@
+{
+    Version 2012-10-17,
+    Statement [
+        {
+            Action [
+                s3AbortMultipartUpload,
+                s3DeleteObject,
+                s3GetBucketAcl,
+                s3GetBucketPolicy,
+                s3GetObject,
+                s3GetObjectAcl,
+                s3ListBucket,
+                s3ListBucketMultipartUploads,
+                s3ListMultipartUploadParts,
+                s3PutObject,
+                s3PutObjectAcl
+            ],
+            Resource [
+                <S3 Bucket>
+            ],
+            Effect Allow
+        },
+        {
+            Action [
+                ec2DescribeKeyPairs,
+                ec2DescribeSubnets,
+                autoscalingDescribeLaunchConfigurations,
+                autoscalingUpdateAutoScalingGroup,
+                autoscalingDescribeAutoScalingGroups,
+                autoscalingDescribeScalingActivities,
+                elasticloadbalancingDescribeLoadBalancers
+            ],
+            Resource,
+            Effect Allow
+        }
+    ]
+}
