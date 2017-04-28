@@ -23,7 +23,7 @@ resource "aws_iam_instance_profile" "master_instance_profile" {
 
 resource "aws_iam_policy" "master_iam_policy" {
 name = "dcos_master_iam_role_policy"
-policy = "${file("../bootstap/s3_bucket/master_policy.json")}"
+policy = "${file("../master/ec2_profile/master_policy.json")}"
 }
 
 resource "aws_iam_policy_attachment" "master_policy" {
@@ -33,6 +33,6 @@ resource "aws_iam_policy_attachment" "master_policy" {
 }
 
 output "dcos_master_instance_profile" {
-  value = "${aws_iam_instance_profile.master_instance_profile.name}"
+  value = "${aws_iam_instance_profile.master_instance_profile.id}"
 }
 

@@ -1,6 +1,7 @@
 resource "aws_elb" "master_elb" {
   name = "dcos"
   subnets = ["${var.master_subnet_id}"]
+  internal = "true"
   listener {
     instance_port = 5050
     instance_protocol = "http"

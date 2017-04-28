@@ -10,7 +10,7 @@ resource "aws_autoscaling_group" "master_asg" {
   load_balancers = ["${var.master_elb_name}"]
   tag {
     key = "Name"
-    value = "${var.project-tag}-master"
+    value = "${var.project_tag}-master"
     propagate_at_launch = "true"
   }
 }
