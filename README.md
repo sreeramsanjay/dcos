@@ -6,20 +6,20 @@
   * You should have the AWS Key and Access
 
 **Usage instructions:**
-          1.terraform init
-          
-          2.terraform plan
-          
-          3.terraform apply
 
-Note: 1.Update the files under stacks/<stacks_name> with appropriate values and only these are the manual changes needed before running terraform.
-      2.Review the changes on plan stage before running terraform apply.
-      3.Any changes made with aws-cli/console/sdk or any other awsapi will be lost with terraform apply.
-      4.Few changes may result permanent deletion of resources and may not possible to restore it back.
-      5.Update the variable.tf file with appropriate values.
-      6.Update the code with test cases before using on production environment
+    1.terraform init          
+    2.terraform plan
+    3.terraform apply
 
-Version: Terraform v0.9.4
+#####Note: 
+1.Update the files under stacks/<stacks_name> with appropriate values and only these are the manual changes needed before running terraform.
+2.Review the changes on plan stage before running terraform apply.
+3.Any changes made with aws-cli/console/sdk or any other awsapi will be lost with terraform apply.
+4.Few changes may result permanent deletion of resources and may not possible to restore it back.
+5.Update the variable.tf file with appropriate values.
+6.Update the code with test cases before using on production environment
+
+#####Version: Terraform v0.9.4
 
 This repository directory structure contains stacks, modules, dcos-post-install and ansible-dcos-bootstrap.
 
