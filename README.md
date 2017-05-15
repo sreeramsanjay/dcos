@@ -14,10 +14,15 @@
 ##### Note: 
 
 1.Update the files under stacks/<stacks_name> with appropriate values and only these are the manual changes needed before running terraform
+
 2.Review the changes on plan stage before running terraform apply
+
 3.Any changes made with aws-cli/console/sdk or any other awsapi will be lost with terraform apply
+
 4.Few changes may result permanent deletion of resources and may not possible to restore it back
+
 5.Update the variable.tf file with appropriate values
+
 6.Update the code with test cases before using on production environment
 
 ##### Version: Terraform v0.9.4
@@ -26,15 +31,15 @@ This repository directory structure contains stacks, modules, dcos-post-install 
 
 #### Modules:
 
--Modules directory contains the reusable code to build the aws infrastructure using terraform and each modules will be
-    used by single or multiple stacks to build the infrastructures
+-Modules directory contains the reusable code to build the aws infrastructure using terraform and each modules will be used by single or multiple stacks to build the infrastructures
+
 -It is not recommended to update the modules as this may impact the dependent stacks
 
 #### Stacks:
 
--Stacks contains sub directory which builds actual aws infrastructures and each of these subdirectory contains mail.cf and variables.tf files to call the subsequent modules.
--main.cf file will call the modules and pass the input variables to build the resources
--varaible.tf fill hold all variables and we need update the variables as needed on this file
+- Stacks contains sub directory which builds actual aws infrastructures and each of these subdirectory contains mail.cf and variables.tf files to call the subsequent modules
+- main.cf file will call the modules and pass the input variables to build the resources
+- varaible.tf fill hold all variables and we need update the variables as needed on this file
 
 #### ansible-dcos-bootstrap:
 -This directory contains the ansible playbooks to create the mesosphere config.yaml file then generate mesosphere install files
