@@ -13,10 +13,8 @@
 
 ##### Note: 
 
-1.Update the files under stacks/<stacks_name> with appropriate values and only these are the manual changes needed before running terraform
-
-2.Review the changes on plan stage before running terraform apply
-
+1. Update the files under stacks/<stacks_name> with appropriate values and only these are the manual changes needed before running terraform
+2. Review the changes on plan stage before running terraform apply
 3.Any changes made with aws-cli/console/sdk or any other awsapi will be lost with terraform apply
 
 4.Few changes may result permanent deletion of resources and may not possible to restore it back
@@ -31,9 +29,8 @@ This repository directory structure contains stacks, modules, dcos-post-install 
 
 #### Modules:
 
--Modules directory contains the reusable code to build the aws infrastructure using terraform and each modules will be used by single or multiple stacks to build the infrastructures
-
--It is not recommended to update the modules as this may impact the dependent stacks
+- Modules directory contains the reusable code to build the aws infrastructure using terraform and each modules will be used by single or multiple stacks to build the infrastructures
+- It is not recommended to update the modules as this may impact the dependent stacks
 
 #### Stacks:
 
