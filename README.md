@@ -85,6 +85,7 @@
 - This will build an EC2 instance to build mesosphere bootstrap node which is generate install file then upload them to s3 bucket, this stack need inputs from vpc & dcos_infra stacks as a variables.
 
 ##### dcos_bs stack creates below resources:
+
 1. EC2 instance
 
 #### dcos_master:
@@ -92,29 +93,37 @@
 - This will build auto scaling groups for mesosphere master and needs inputs from vpc, dcos_infra and dcos_bs as variables like elb name, subnets ids, iam profiles, bootstrap url etc.
 
 ##### dcos_bs stack creates below resources:
+
 1. Auto scaling launch configuration
 2. Auto scaling group
 
-    dcos_priv: This will build auto scaling groups for mesosphere master and needs inputs from vpc, dcos_infra and dcos_bs as variables like elb name, subnets ids, iam profiles, bootstrap url etc.
+#### dcos_priv:
 
-    dcos_priv stack creates below resources:
-      1.Auto scaling launch configuration
-      2.Auto scaling group
+- This will build auto scaling groups for mesosphere master and needs inputs from vpc, dcos_infra and dcos_bs as variables like elb name, subnets ids, iam profiles, bootstrap url etc.
 
-    dcos_pub: This will build auto scaling groups for mesosphere master and needs inputs from vpc, dcos_infra and dcos_bs as variables like elb name, subnets ids, iam profiles, bootstrap url etc.
+##### dcos_priv stack creates below resources:
+1. Auto scaling launch configuration
+2. Auto scaling group
 
-    dcos_pub stack creates below resources:
-      1.Auto scaling launch configuration
-      2.Auto scaling group
+#### dcos_pub:
 
-    All these modules uses centos 7.3 base image imported from Mckinsey on-prem and below are the packages loaded on these image.
-      1.Loaded with all mesosphere prerequisites using dcos-prerequisite ansible playbook
-      2.aws-cli
-      3.pip
-      4.python-dateutil
-      5.ec2-metadata
-      6.cloud-init
+- This will build auto scaling groups for mesosphere master and needs inputs from vpc, dcos_infra and dcos_bs as variables like elb name, subnets ids, iam profiles, bootstrap url etc.
 
-    Manually provisioned infrastructure:
-      All the infrastructure is provisioned using the terraform code available in this repository.
-      Route53 and iaas-pilot-tfstatus s3 bucket are the only resource created manually from aws console.
+##### dcos_pub stack creates below resources:
+1. Auto scaling launch configuration
+2. Auto scaling group
+
+### Base Image
+
+- All these modules uses centos 7.3 base image imported from Mckinsey on-prem and below are the packages loaded on these image.
+1. Loaded with all mesosphere prerequisites using dcos-prerequisite ansible playbook
+2. aws-cli
+3. pip
+4. python-dateutil
+5. ec2-metadata
+6. cloud-init
+
+### Manually provisioned infrastructure:
+
+- All the infrastructure is provisioned using the terraform code available in this repository.
+- Route53 and iaas-pilot-tfstatus s3 bucket are the only resource created manually from aws console.
