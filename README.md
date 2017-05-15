@@ -13,35 +13,35 @@
 
 ##### Note: 
 
-1.Update the files under stacks/<stacks_name> with appropriate values and only these are the manual changes needed before running terraform.
-2.Review the changes on plan stage before running terraform apply.
-3.Any changes made with aws-cli/console/sdk or any other awsapi will be lost with terraform apply.
-4.Few changes may result permanent deletion of resources and may not possible to restore it back.
-5.Update the variable.tf file with appropriate values.
+1.Update the files under stacks/<stacks_name> with appropriate values and only these are the manual changes needed before running terraform
+2.Review the changes on plan stage before running terraform apply
+3.Any changes made with aws-cli/console/sdk or any other awsapi will be lost with terraform apply
+4.Few changes may result permanent deletion of resources and may not possible to restore it back
+5.Update the variable.tf file with appropriate values
 6.Update the code with test cases before using on production environment
 
 ##### Version: Terraform v0.9.4
 
-This repository directory structure contains stacks, modules, dcos-post-install and ansible-dcos-bootstrap.
+This repository directory structure contains stacks, modules, dcos-post-install and ansible-dcos-bootstrap
 
 #### Modules:
 
-    Modules directory contains the reusable code to build the aws infrastructure using terraform and each modules will be
-    used by single or multiple stacks to build the infrastructures.
-    It is not recommended to update the modules as this may impact the dependent stacks.
+-Modules directory contains the reusable code to build the aws infrastructure using terraform and each modules will be
+    used by single or multiple stacks to build the infrastructures
+-It is not recommended to update the modules as this may impact the dependent stacks
 
 #### Stacks:
 
-    Stacks contains sub directory which builds actual aws infrastructures and each of these subdirectory contains mail.cf and variables.tf files to call the subsequent modules.
-      main.cf file will call the modules and pass the input variables to build the resources
-      varaible.tf fill hold all variables and we need update the variables as needed on this file
+-Stacks contains sub directory which builds actual aws infrastructures and each of these subdirectory contains mail.cf and variables.tf files to call the subsequent modules.
+-main.cf file will call the modules and pass the input variables to build the resources
+-varaible.tf fill hold all variables and we need update the variables as needed on this file
 
-ansible-dcos-bootstrap:
-    This directory contains the ansible playbooks to create the mesosphere config.yaml file then generate mesosphere install files
+#### ansible-dcos-bootstrap:
+-This directory contains the ansible playbooks to create the mesosphere config.yaml file then generate mesosphere install files
     and upload them to S3 bucket.
-    Any config changes related mesosphere bootstrap needs to be update here and this playbooks will be executed as a part of terraform stack dcos_bs where we need to pass input variables to this ansible playbook using userdata.sh file.
+-Any config changes related mesosphere bootstrap needs to be update here and this playbooks will be executed as a part of terraform stack dcos_bs where we need to pass input variables to this ansible playbook using userdata.sh file.
 
-dcos-post-install:
+#### dcos-post-install:
     This directory contains the bash scripts to perform the post install steps on mesosphere private agents like node attributes and docker garbage collector.
     mesosphere private agents will download the post install scripts during the bootstrap of private agent and arguments for this scripts needs to be pass from userdata.sh scripts located on respective stacks of terraform.
 
