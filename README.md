@@ -5,9 +5,11 @@
   * You should have terraform installed if not having download it from https://www.terraform.io/downloads.html
   * You should have the AWS Key and Access
 
-Usage instructions:
+**Usage instructions:**
           1.terraform init
+          
           2.terraform plan
+          
           3.terraform apply
 
 Note: 1.Update the files under stacks/<stacks_name> with appropriate values and only these are the manual changes needed before running terraform.
